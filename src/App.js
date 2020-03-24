@@ -8,7 +8,7 @@ import AuthorsList from "./AuthorsList";
 import AuthorDetail from "./AuthorDetail";
 
 import { connect } from "react-redux";
-import * as actionCreators from "./store/actions/index";
+import { fetchAllAuthors } from "./redux/actions";
 
 class App extends Component {
   componentDidMount() {
@@ -56,9 +56,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

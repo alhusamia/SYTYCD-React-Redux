@@ -6,7 +6,7 @@ import Loading from "./Loading";
 
 import { connect } from "react-redux";
 
-import * as actionCreators from "./store/actions/index";
+import { fetchAuthorDetail } from "./redux/actions";
 
 class AuthorDetail extends Component {
   componentDidMount() {
@@ -44,11 +44,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAuthor: authorID => dispatch(actionCreators.fetchAuthorDetail(authorID))
+    getAuthor: authorID => dispatch(fetchAuthorDetail(authorID))
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AuthorDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetail);
