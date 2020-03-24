@@ -1,3 +1,5 @@
 export { fetchAuthorDetail } from "./author";
 
-export { fetchAuthors } from "./authors";
+export { fetchAuthors,filterAuthors } from "./authors";
+
+
